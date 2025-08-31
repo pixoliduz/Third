@@ -1,0 +1,103 @@
+:root{
+  --bg:#f7f7fb;
+  --card:#ffffff;
+  --accent:#1f6feb;
+  --muted:#6b7280;
+  --gap:20px;
+  --max-width:1200px;
+}
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: url("back.png") no-repeat center center fixed;
+  background-size: cover;
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:32px 16px;
+  display:flex;
+  justify-content:center;
+}
+
+.container{
+  width:100%;
+  max-width:var(--max-width);
+}
+
+header{text-align:center;margin-bottom:22px;}
+header h1{margin:0;font-size:22px;}
+header p{margin:6px 0 0 0;color:var(--muted);font-size:14px;}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:var(--gap);
+}
+@media (max-width:1000px){.grid{grid-template-columns: repeat(3, 1fr);}}
+@media (max-width:700px){.grid{grid-template-columns: repeat(2, 1fr);}}
+@media (max-width:420px){.grid{grid-template-columns: repeat(1, 1fr);}}
+
+.card{
+  background:var(--card);
+  border-radius:12px;
+  padding:12px;
+  box-shadow:0 6px 18px rgba(16,24,40,0.06);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+}
+
+.img-wrap{
+  width:100%;
+  position:relative;
+  padding-top:100%;
+  overflow:hidden;
+  border-radius:8px;
+  background:linear-gradient(180deg,#f3f4f6,#fff);
+  display:block;
+}
+.img-wrap img{
+  position:absolute;
+  top:0;left:0;width:100%;height:100%;
+  object-fit:cover;
+}
+
+.title{
+  text-align:center;
+  font-size:15px;
+  font-weight:600;
+  margin:0;
+  color:#0f172a;
+  min-height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.actions{
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:600;
+  text-decoration:none;
+  cursor:pointer;
+  border:1px solid transparent;
+  transition:transform .08s ease, box-shadow .08s;
+}
+.btn:active{transform:translateY(1px)}
+.btn-download{
+  background:var(--accent);
+  color:white;
+  box-shadow:0 6px 14px rgba(31,111,235,0.12);
+}
